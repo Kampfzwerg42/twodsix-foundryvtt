@@ -1,4 +1,4 @@
-SEARCH_PATTERN='(\s\"(manifest|download)\"\: \"https:\/\/github.com\/xdy\/twodsix-foundryvtt\/releases\/).*(\/(system.json|twodsix.zip)\",)'
+SEARCH_PATTERN='(\s\"(manifest|download)\"\: \"https:\/\/github.com\/Kampfzwerg42\/twodsix-foundryvtt\/releases\/).*(\/(system.json|twodsix.zip)\",)'
 DEVELOPMENT_REPLACE="\1download/v$1\3"
 MASTER_REPLACE="\1latest/download\3"
 
@@ -10,3 +10,4 @@ sed -i -e 's|\(.*"version"\): "\(.*\)",.*|\1: '"\"$1\",|" static/system.json &&
   cd dist || exit &&
   zip -r twodsix.zip ./* &&
   cd ..
+  
