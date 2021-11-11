@@ -270,7 +270,7 @@ export class TwodsixActorSheet extends AbstractTwodsixActorSheet {
     const li = $(event.currentTarget).parents(".item");
     const itemSelected: any = this.actor.items.get(li.data("itemId"));
 
-    switch (itemSelected.data.equipped) {
+    switch (itemSelected.data.data.equipped) {
       case "equipped":
         await itemSelected.update({["data.equipped"]: "ship"});
         break;

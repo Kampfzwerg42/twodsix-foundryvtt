@@ -800,9 +800,13 @@ input.skill-level-edit {
 }
 
 .item-controls .item-toggle i { display: none; }
+.item-controls .item-toggle .fa-question-circle-o { display: inline; }
+.item-controls .item-toggle.ship .fa-question-circle-o,
+.item-controls .item-toggle.backpack .fa-question-circle-o,
+.item-controls .item-toggle.equipped .fa-question-circle-o { display: none; }
 .item-controls .item-toggle.ship .fa-space-shuttle,
 .item-controls .item-toggle.backpack .fa-suitcase,
-.item-controls .item-toggle.equipped .fa-child { display: block; }
+.item-controls .item-toggle.equipped .fa-child { display: inline; }
 
 .skill:nth-of-type(even) {
   background: #0d0d0dbb;
