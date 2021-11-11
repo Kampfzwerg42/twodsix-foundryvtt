@@ -100,6 +100,7 @@ export async function migrate():Promise<void> {
       if (ship) {
         actorUpdater.updateFieldWithNumber("data.maintenanceCost", ship.maintenance_cost);
         actorUpdater.updateFieldWithText("data.cargo", ship.cargo);
+        actorUpdater.updateFieldWithText("data.configuration", ship.configuration);
         actorUpdater.updateFieldWithText("data.notes", ship.notes);
         actorUpdater.updateFieldWithObject("data.crew", ship.crew);
 

@@ -1514,7 +1514,7 @@ a.ship-notes-tab.active {
 
 .cargo-wrapper > div[contenteditable], .cargo-wrapper > .editor {
   border: 1px solid #29aae1;
-  height: 18em;
+  height: 19em;
   color: #00e5ff !important;
   padding: 0.2em;
   overflow-y: auto;
