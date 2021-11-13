@@ -40,7 +40,8 @@ export class TwodsixActorSheet extends AbstractTwodsixActorSheet {
       autofireRulesUsed: game.settings.get('twodsix', 'autofireRulesUsed'),
       lifebloodInsteadOfCharacteristics: game.settings.get('twodsix', 'lifebloodInsteadOfCharacteristics'),
       showContaminationBelowLifeblood: game.settings.get('twodsix', 'showContaminationBelowLifeblood'),
-      showLifebloodStamina: game.settings.get("twodsix", "showLifebloodStamina")
+      showLifebloodStamina: game.settings.get("twodsix", "showLifebloodStamina"),
+      showHeroPoints: game.settings.get("twodsix", "showHeroPoints")
     };
     data.config = TWODSIX;
 
@@ -87,9 +88,9 @@ export class TwodsixActorSheet extends AbstractTwodsixActorSheet {
     // Item State toggling
     html.find(".item-toggle").on("click", this._onToggleItem.bind(this));
 
-    //add hooks to allow skill levels to be updates on skill tab
-    html.find(".skill-level-edit").on("input", this._onSkillLevelEdit.bind(this));
-    html.find(".skill-level-edit").on("click", (event) => {
+    //add hooks to allow skill levels consumable counts to be updated on skill and equipment tabs, repectively
+    html.find(".item-value-edit").on("input", this._onItemValueEdit.bind(this));
+    html.find(".item-value-edit").on("click", (event) => {
       $(event.currentTarget).trigger("select");
     });
   }
@@ -266,7 +267,7 @@ export class TwodsixActorSheet extends AbstractTwodsixActorSheet {
    * @param {Event} event   The originating click event.
    * @private
    */
-   private async _onToggleItem(event): Promise<void> {
+  private async _onToggleItem(event): Promise<void> {
     const li = $(event.currentTarget).parents(".item");
     const itemSelected: any = this.actor.items.get(li.data("itemId"));
 
@@ -285,14 +286,19 @@ export class TwodsixActorSheet extends AbstractTwodsixActorSheet {
   }
 
   /**
-   * Update skill level when edited on skill tab.
-   * @param {Event} event   The originating input event
+   * Update an item value when edited on skill or inventory tab.
+   * @param {Event} event  The originating input event
    * @private
    */
-  private async _onSkillLevelEdit(event:Event): Promise<void> {
+  private async _onItemValueEdit(event:Event): Promise<void> {
     const newValue = parseInt(event.currentTarget["value"], 10);
     const li = $(event.currentTarget).parents(".item");
     const itemSelected = this.actor.items.get(li.data("itemId"));
-    itemSelected.update({'data.value': newValue});
+    
+    if (itemSelected.type === "skills") {
+      itemSelected.update({ "data.value": newValue });
+    } else if (itemSelected.type === "consumable") {
+      itemSelected.update({ "data.quantity": newValue });
+    }
   }
 }

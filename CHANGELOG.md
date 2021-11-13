@@ -1,3 +1,78 @@
+## [0.8.35](https://github.com/xdy/twodsix-foundryvtt/compare/v0.8.34...v0.8.35) (2021-11-13)
+
+
+### Bug Fixes
+
+* Updated Swedish translation ([8f73e6d](https://github.com/xdy/twodsix-foundryvtt/commit/8f73e6dc396fb75b83146482dfe623756f88b29b))
+
+## [0.8.34](https://github.com/xdy/twodsix-foundryvtt/compare/v0.8.33...v0.8.34) (2021-11-13)
+
+
+### Bug Fixes
+
+* "twodsix_limitlength" handlebar did not work with empty string ([8810849](https://github.com/xdy/twodsix-foundryvtt/commit/88108490902ee9d234eb8e5667dba5494334e052))
+* add missing localization on ship storage tab ([e952a14](https://github.com/xdy/twodsix-foundryvtt/commit/e952a14f103ddcf2b1cdccc0025cec7d352ab9dd))
+* forgot to reformat grid for ship storage ([749e3d7](https://github.com/xdy/twodsix-foundryvtt/commit/749e3d7cb36adf94f2000387e0b6c88868f4f103))
+* refactor component icon selection to be handlebar helper ([c48b1cf](https://github.com/xdy/twodsix-foundryvtt/commit/c48b1cf6935607091c011a967293e747194136b6))
+* show damage field on single row component list ([d958c4f](https://github.com/xdy/twodsix-foundryvtt/commit/d958c4f1303cba7fee6663fc871e1781987faa1f))
+* tab bar not wide enough ([df4f8ac](https://github.com/xdy/twodsix-foundryvtt/commit/df4f8acd7f1bc258cebd1f16ba05d61cbb6ec727))
+
+## [0.8.33](https://github.com/xdy/twodsix-foundryvtt/compare/v0.8.32...v0.8.33) (2021-11-13)
+
+
+### Bug Fixes
+
+* Updated Spanish translation courtesy of @ForjaSalvaje ([9e99c60](https://github.com/xdy/twodsix-foundryvtt/commit/9e99c60d5b849034eb74ed58159ddaa48c48dab9))
+
+## [0.8.32](https://github.com/xdy/twodsix-foundryvtt/compare/v0.8.31...v0.8.32) (2021-11-12)
+
+
+### Bug Fixes
+
+* add localization to ship sheet ([1450db0](https://github.com/xdy/twodsix-foundryvtt/commit/1450db05258b8994c0c8da9bcc05b5af4c6f19f9))
+* clean up component list and add localization ([298c780](https://github.com/xdy/twodsix-foundryvtt/commit/298c780155b1554700725ede7fcb6da00b3a2807))
+* close button location move on revised actor sheet ([231c322](https://github.com/xdy/twodsix-foundryvtt/commit/231c322909477ff9b380e255777403666c8e377b))
+* restrict the item types that can be dropped on actor sheet ([1bf2226](https://github.com/xdy/twodsix-foundryvtt/commit/1bf2226115c9ead0e6a5763c27d3026baab64864))
+* show quantity rather than value on ship locker ([c36a7d9](https://github.com/xdy/twodsix-foundryvtt/commit/c36a7d98acd7840be1eec092abaa816ecd2397fa))
+
+## [0.8.31](https://github.com/xdy/twodsix-foundryvtt/compare/v0.8.30...v0.8.31) (2021-11-08)
+
+
+### Bug Fixes
+
+* Updated Spanish translation ([9f55ae5](https://github.com/xdy/twodsix-foundryvtt/commit/9f55ae5d52cff5c6bcc702ad6d643b4e0a72dd11))
+
+## [0.8.30](https://github.com/xdy/twodsix-foundryvtt/compare/v0.8.29...v0.8.30) (2021-11-08)
+
+
+### Bug Fixes
+
+* add new Cepheus Deluxe Compendium ([cec61b4](https://github.com/xdy/twodsix-foundryvtt/commit/cec61b488407d9975ee2b0b0ff2779812b96026c))
+* add new icons ([8f2c4b7](https://github.com/xdy/twodsix-foundryvtt/commit/8f2c4b7a3ca3eec1c14f4f95feaa84c17ee9fd7e))
+* better coding style ([234939e](https://github.com/xdy/twodsix-foundryvtt/commit/234939ed1a565c24ba2bbd4ae2c08799e6046a85))
+* correct error when trying to create an untrained skill that exists ([fdc7281](https://github.com/xdy/twodsix-foundryvtt/commit/fdc7281427e31bf5793df3c0e19384ec11a93292))
+* missing associated skill for pulse rifle ([6e74e23](https://github.com/xdy/twodsix-foundryvtt/commit/6e74e2369159b148be85afe9b669c4762bb48ddc))
+* update compendium manifest ([e306244](https://github.com/xdy/twodsix-foundryvtt/commit/e3062445d04a3cf79a5d5ddc2be31c9406e8b725))
+
+## [0.8.29](https://github.com/xdy/twodsix-foundryvtt/compare/v0.8.28...v0.8.29) (2021-11-05)
+
+
+### Bug Fixes
+
+* update comment field ([f9f9773](https://github.com/xdy/twodsix-foundryvtt/commit/f9f9773e4bc7d145f5c0351bb5dc21d863c1b045))
+
+## [0.8.28](https://github.com/xdy/twodsix-foundryvtt/compare/v0.8.27...v0.8.28) (2021-11-05)
+
+
+### Bug Fixes
+
+* can not have zero values in style sheet ([85dade7](https://github.com/xdy/twodsix-foundryvtt/commit/85dade71e31820a9a253f57af100b354df732e2c))
+* clarify default token icon setting and move after other token setting ([8b7345c](https://github.com/xdy/twodsix-foundryvtt/commit/8b7345c375f25c999b7f2ec39a8925c3ca37d8fa))
+* clean up poor coding style ([6e6c66a](https://github.com/xdy/twodsix-foundryvtt/commit/6e6c66a09a43e55f8c6ff054623ab7ffb347fa5e))
+* create option to show hero points ([e4c6997](https://github.com/xdy/twodsix-foundryvtt/commit/e4c6997b0ccbe32f01255ec8792696dacdd57916))
+* Move JOAT line to inside skills list ([e2d1ebf](https://github.com/xdy/twodsix-foundryvtt/commit/e2d1ebf26826b51556a1a9eb836ff78d8c4e0c39))
+* zero value not allowed ([004c7fa](https://github.com/xdy/twodsix-foundryvtt/commit/004c7fa1af469e5e347dec4fe5e15cdfee7b98bd))
+
 ## [0.8.27](https://github.com/xdy/twodsix-foundryvtt/compare/v0.8.26...v0.8.27) (2021-10-31)
 
 

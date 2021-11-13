@@ -86,7 +86,8 @@ Hooks.once('init', async function () {
     "systems/twodsix/templates/actors/parts/actor/actor-finances.html",
     "systems/twodsix/templates/actors/parts/actor/actor-info.html",
     "systems/twodsix/templates/actors/parts/actor/actor-items.html",
-
+    "systems/twodsix/templates/actors/parts/actor/actor-bgi-cd.html",
+    "systems/twodsix/templates/actors/parts/actor/actor-bgi-std.html",
 
     "systems/twodsix/templates/actors/parts/actor/actor-notes.html",
     "systems/twodsix/templates/actors/parts/actor/actor-skills.html",
@@ -97,6 +98,8 @@ Hooks.once('init', async function () {
     "systems/twodsix/templates/actors/parts/ship/ship-crew.html",
     "systems/twodsix/templates/actors/parts/ship/ship-notes.html",
     "systems/twodsix/templates/actors/parts/ship/ship-storage.html",
+    "systems/twodsix/templates/actors/parts/ship/ship-components-single.html",
+    "systems/twodsix/templates/actors/parts/ship/ship-components-double.html",
     //
     "systems/twodsix/templates/chat/damage-message.html",
     "systems/twodsix/templates/chat/throw-dialog.html",
@@ -109,6 +112,7 @@ Hooks.once('init', async function () {
     //
     "systems/twodsix/templates/items/armor-sheet.html",
     "systems/twodsix/templates/items/augment-sheet.html",
+    "systems/twodsix/templates/items/component-sheet.html",
     "systems/twodsix/templates/items/consumable-sheet.html",
     "systems/twodsix/templates/items/equipment-sheet.html",
     "systems/twodsix/templates/items/item-sheet.html",

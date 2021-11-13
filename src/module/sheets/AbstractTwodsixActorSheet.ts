@@ -159,6 +159,7 @@ export abstract class AbstractTwodsixActorSheet extends ActorSheet {
     event.preventDefault();
 
     const data = getDataFromDropEvent(event);
+    const actor = this.actor;
 
     if (!data) {
       console.log(`Twodsix | Dragging something that can't be dragged`);
@@ -166,22 +167,35 @@ export abstract class AbstractTwodsixActorSheet extends ActorSheet {
     }
 
     if (data.type === 'damageItem') {
-      const useInvertedShiftClick: boolean = (<boolean>game.settings.get('twodsix', 'invertSkillRollShiftClick'));
-      const showDamageDialog = useInvertedShiftClick ? event["shiftKey"] : !event["shiftKey"];
-      // @ts-ignore
-      await this.actor.damageActor(data.payload["damage"], showDamageDialog);
-      return;
+      if (actor.data.type === 'traveller') {
+        const useInvertedShiftClick: boolean = (<boolean>game.settings.get('twodsix', 'invertSkillRollShiftClick'));
+        const showDamageDialog = useInvertedShiftClick ? event["shiftKey"] : !event["shiftKey"];
+        // @ts-ignore
+        await this.actor.damageActor(data.payload["damage"], showDamageDialog);
+      } else {
+        ui.notifications.warn(game.i18n.localize("TWODSIX.Warnings.CantAutoDamageShip"));
+      }
+      return false;
     }
 
-    const actor = this.actor;
     const itemData = await getItemDataFromDropData(data);
 
-
-    if (itemData.type === 'skills') {
-      return this.handleDroppedSkills(actor, itemData, data, event);
-    } else {
-      return this.handleDroppedItem(actor, itemData, data, event);
+    switch (actor.data.type) {
+      case 'traveller':
+        if (itemData.type === 'skills') {
+          return this.handleDroppedSkills(actor, itemData, data, event);
+        } else if (!["component"].includes(itemData.type)) {
+          return this.handleDroppedItem(actor, itemData, data, event);
+        }
+        break;
+      case 'ship':
+        if (!["augment", "skills", "trait"].includes(itemData.type)) {
+          return this.handleDroppedItem(actor, itemData, data, event);
+        }
+        break;
     }
+    ui.notifications.warn(game.i18n.localize("TWODSIX.Warnings.CantDragOntoActor"));
+    return false;
   }
 
   private async handleDroppedSkills(actor: ActorSheet.Data<Actor> extends ActorSheet.Data<infer T> ? T : Actor, itemData: TwodsixItemData, data: Record<string, any>, event: DragEvent) {
@@ -265,6 +279,7 @@ export abstract class AbstractTwodsixActorSheet extends ActorSheet {
     let primaryArmor = 0;
     let secondaryArmor = 0;
     let radiationProtection = 0;
+    const component: Item[] = [];
 
     // Iterate through items, allocating to containers
     items.forEach((item: TwodsixItem) => {
@@ -320,6 +335,9 @@ export abstract class AbstractTwodsixActorSheet extends ActorSheet {
           consumable.push(item);
           storage.push(item);
           break;
+        case "component":
+          component.push(item);
+          break;
         default:
           break;
       }
@@ -342,5 +360,6 @@ export abstract class AbstractTwodsixActorSheet extends ActorSheet {
       sheetData.data.radiationProtection.value = radiationProtection;
       sheetData.data.encumbrance.value = encumbrance;
     }
+    sheetData.data.component = component;
   }
 }

@@ -209,7 +209,7 @@
             </span>
             <span class="item-name rollable" title="{{twodsix_invertSkillRollShiftClick}}">{{item.name}}</span>
             <span class="item-name centre">{{twodsix_localizeConsumable item.data.data.subtype}}</span>
-            <span class="item-name centre">{{item.data.data.quantity}}</span>
+            <input class= "item-value-edit" type="number" min="0" step="1" value="{{item.data.data.quantity}}"/>
             <span class="item-name centre">{{item.data.data.currentCount}}/{{item.data.data.max}}</span>
             <span class="item-controls centre">
               <a class="item-control item-toggle {{item.data.data.equipped}}" title='{{item.data.data.equipped}}'><i class="fas fa-question-circle"></i><i class="fas fa-child"></i><i class="fas fa-space-shuttle"></i><i class="fas fa-suitcase"></i></a>

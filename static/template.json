@@ -30,6 +30,7 @@
       "secondaryArmor": {
         "value": 0
       },
+      "heroPoints": 2,
       "radiationProtection": {
         "value": 0
       },
@@ -303,7 +304,7 @@
     }
   },
   "Item": {
-    "types": ["equipment", "weapon", "armor", "augment", "storage", "tool", "junk", "skills", "trait", "consumable"],
+    "types": ["equipment", "weapon", "armor", "augment", "storage", "tool", "junk", "skills", "trait", "consumable", "component"],
     "equipped": ["equipped", "ship", "backpack"],
     "templates": {
       "gearTemplate": {
@@ -405,6 +406,15 @@
       "type": "consumable",
       "subtype": "other",
       "location": ["inventory", "storage"]
+    },
+    "component": {
+      "templates": ["gearTemplate"],
+      "subtype": ["accomodations", "armament", "armor", "cargo", "computer", "drive", "electronics", "hull", "power", "shield", "software", "vehicle", "other"],
+      "powerDraw": 0,
+      "rating": "",
+      "availableQuantity": "",
+      "damage": "",
+      "status": ["operational", "damaged", "destroyed", "off"]
     }
   }
 }

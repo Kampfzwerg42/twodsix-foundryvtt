@@ -40,7 +40,9 @@
         "INT": "INT",
         "PSI": "PSI",
         "SOC": "SOC",
-        "STR": "FUE"
+        "STR": "FUE",
+        "LFB": "VIT",
+        "STA": "AGU"
       },
       "DeleteOwnedItem": "Borrar objeto",
       "Finances": {
@@ -52,6 +54,7 @@
         "SHIP_PAYMENTS_MONTHLY": "GASTO MENSUAL NAVE"
       },
       "Gender": "Sexo",
+      "HeroPoints": "Puntos Heroe",
       "Contamination": "Contaminación",
       "Lifeblood": "Vitalidad",
       "Stamina": "Aguante",
@@ -87,6 +90,7 @@
         "Subtype": "Tipo",
         "TRAITS": "RASGOS",
         "TL": "NT",
+        "Value": "Precio",
         "WEAPONS": "ARMAS",
         "Weight": "KG"
       },
@@ -148,6 +152,32 @@
         "Torso": "Torso",
         "ValueCr": "Valor en Cr"
       },
+      "Component": {
+        "componentName": "Componente",
+        "accomodations": "habitáculos",
+        "armament": "armamento",
+        "armor": "armadura",
+        "cargo": "bodega carga",
+        "computer": "computadora",
+        "drive": "motor",
+        "electronics": "electrónica",
+        "hull": "casco",
+        "power": "energía",
+        "shield": "escudo",
+        "software": "software",
+        "vehicle": "vehículo",
+        "other": "otro",
+        "operational": "operativo",
+        "damaged": "dañado", 
+        "destroyed": "destruido",
+        "off": "apagado",
+        "powerDraw": "Consumo Energía",
+        "status": "Estado",
+        "rating": "Valor",
+        "totalQuantity": "Cantidad Total",
+        "availableQuantity": "Cantidad Disponible",
+        "damage": "Daño / Impactos"
+      },
       "Equipment": {
         "AssignSkill": "Asignar Habilidad",
         "AssociatedSkillName": "Habilidad Asociada",
@@ -186,7 +216,9 @@
         "PSI": "PSI",
         "SOC": "SOC",
         "STR": "FUE",
-        "SkillName": "Nombre Hab."
+        "SkillName": "Nombre Hab.",
+        "LFB": "VIT",
+        "STA": "AGU"
       },
       "Traits": {
               "Prerequisite": "Prerequisito",
@@ -224,6 +256,43 @@
         "recoil": "Retroceso",
         "UseAsAmmunitionForAttack": "Utilizar como munición para el ataque",
         "MagazineCost": "Coste del cargador/celda"
+      }
+    },
+    "Ship": {
+      "ShipHull": "Casco",
+      "Fuel": "Combustible",
+      "MaintPM": "Mantenimiento",
+      "PowerManagement": "Gestión Energía",
+      "Power": "Energía",
+      "USED": "USO",
+      "MAX": "MAX",
+      "Systems": "Sistemas",
+      "MDrive": "MotorM",
+      "JDrive": "MotorS",
+      "Sensors": "Sensores",
+      "Weapons": "Armas",
+      "SHIPCARGO": "BODEGA DE CARGA",
+      "SHIPNOTES": "CUADERNO DE BITÁCORA",
+      "Tabs": {
+        "Crew": "Dotación",
+        "Components": "Componentes",
+        "Locker": "Consigna",
+        "Cargo": "Bodega",
+        "Notes": "Notas"
+      },
+      "Crew": {
+        "CAPTAIN": "CAPITÁN",
+        "MAINTENANCE": "MANTENIMIENTO",
+        "ADMIN": "ADMINISTRADOR",
+        "ENGINEERS": "INGENIERO(S)",
+        "PILOT": "PILOTO",
+        "MEDIC": "DOCTOR",
+        "BROKER": "FINANCIERO",
+        "GUNNERS": "ARTILLERO(S)",
+        "ASTROGATOR": "ASTRONAVEGADOR",
+        "STEWARD": "AUXILIAR",
+        "OTHER": "OTRO",
+        "MARINES": "MARINE(S)"
       }
     },
     "Migration": {
@@ -368,12 +437,16 @@
         "name": "Mostrar Contaminación bajo Vitalidad."
      },
       "useSystemDefaultTokenIcon": {
-        "hint": "Utilizar el icono por defecto del sistema (mystery man) como token al crear nuevos actores. Seleccionar para que el token coincida con la imagen del actor automáticamente, incluso con imágenes propias.",
-        "name": "Utilizar la ilustración o imagen por defecto también como token en el actor."
+        "hint": "Utilizar el icono de token por defecto de Foundry VTT (mystery man) en vez del de Twodsix  al crear nuevos actores. Seleccionar para que al utilizar imágenes propias el token coincida con la imagen del actor automáticamente.",
+        "name": "Utilizar el token por defecto de Foundry VTT en vez del de Twodsix."
       },
       "showLifebloodStamina": {
         "hint": "Mostrar Aguante y Vitalidad en la hoja de personaje. Necesario con Cepheus Deluxe.",
         "name": "Mostrar las características derivadas Aguante y Vitalidad."
+     },
+      "showHeroPoints": {
+        "hint": "Mostrar un contador de Puntos de Heroe en la hoja de personaje.",
+        "name": "Mostrar Puntos Heroe"
       }
     },
 	"CloseAndCreateNew": "Cerrar y crear nuevo",
@@ -391,7 +464,8 @@
       "skills": "habilidades",
       "skill": "habilidad",
       "consumable": "consumible",
-      "trait": "rasgo"
+      "trait": "rasgo",
+      "component": "componente"
     },
 	"Errors": {
       "NoSkillForSkillRoll": "Intentando realizar tirada de habilidad sin especificar habilidad",
@@ -415,7 +489,9 @@
       "AutoDamageForMultipleTargetsNotImplemented": "Todavía no se puede asignar daño automáticamente a varios objetivos",
       "MaxStatVal": "El valor supera el máximo del atributo",
       "StatValBelowZero": "El valor no puede ser inferior a cero",
-      "DecreaseEnduranceFirst": "La RES debe reducirse antes que otros Atributos"
+      "DecreaseEnduranceFirst": "La RES debe reducirse antes que otros Atributos",
+      "CantAutoDamageShip": "Daño automático a una nave no soportado.",
+      "CantDragOntoActor": "El objeto no puede ser arrastrado sobre este actor"
     }    
   },
   "VeryDifficult": "Muy Difícil"
