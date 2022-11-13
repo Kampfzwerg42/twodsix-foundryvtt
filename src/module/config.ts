@@ -442,7 +442,7 @@ const DIFFICULTIES:Readonly<{ CE:CE_DIFFICULTIES; CEL:CEL_DIFFICULTIES }> = Obje
 export const SHIP_ACTION_TYPE = Object.freeze({
   skillRoll: "skillRoll",
   chatMessage: "chatMessage",
-  fireEnergyWeapons: "fireEnergyWeapons"
+  useComponent: "useComponent"
 });
 
 /**
