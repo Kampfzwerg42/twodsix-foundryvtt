@@ -46,7 +46,7 @@
     "@types/jquery": "^3.5.14",
     "@types/node": "^18.11.0",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0",
+    "@typescript-eslint/parser": "^5.51.0",
     "@typhonjs-fvtt/eslint-config-foundry.js": "^0.8.0",
     "esbuild": "^0.15.11",
     "eslint": "^8.25.0",
